@@ -1,0 +1,554 @@
+/* Note there a few "reset" styles given in reset.css. Review those before you begin */
+
+/* Imported the Fonts family for our website */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Special+Elite&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&family=Special+Elite&family=Staatliches&display=swap');
+
+/* Smallest Media port */
+/* Overall Html design format */
+html {
+	--primary-col: #F0D7D0;    /* main colour */
+	--primary-alt: #C5E5F0;    /* variant */
+	--primary-on: #000000;     /* for text or icons */
+	--secondary-col: #3399ff;
+	--secondary-alt: #99ccff;
+	--secondary-on: #000000;
+    --bg-col: #7680b9;
+    --pad-and-gap: 1em;
+	/* etc, etc... */
+}
+
+/* Page header format */
+.page-header {
+    background-color: #729C75;
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
+    min-height: 6em;
+        
+}
+
+/* Logo styling */
+.logo{
+    height: 100px;
+    width: 100px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-top: -3em;
+    margin-left: 1px;  
+      
+}
+.banner{
+    height:auto;
+    max-width: 100%;
+    right: 0;
+    margin-right: 0em;
+}
+.bannerImg{
+    width:100em;
+  object-fit: fill;
+  margin-right: 0em;
+  height:500px;
+  
+}
+
+/* Organisation name styling */
+.store-name{
+  
+    font-family: 'Special Elite';
+    font-size: 1.2em;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    margin-top: 1.3em;
+    margin-left: -0.8em;
+    margin-right: 3em;
+    float: left;
+    padding: 0;
+}
+
+/* Search-Box alignment */
+.search-box
+{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    margin-top: 2em;
+    padding: 0.2em;    
+}
+
+/* Search Bar alignment */
+.search-bar
+{
+    font-style: italic;
+    grid-column-start: 2;
+    grid-column-start: 3;
+    margin-left: -35px;
+    padding: 0.2em;  
+    min-width: 1em;  
+    background-image: url('../img/Svg-Icons/Search\ Magnifier.svg');
+    background-position:5px 5px;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    border-color: gray;
+
+}
+
+/* Search button design */
+.search-button
+{
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin-left: -1em;
+    
+}
+
+/* Icon alignment */
+.Icon
+{
+    height: 20px;
+    width: 20px;  
+    margin-left: 15px;   
+    margin-top:5px;
+}
+
+/* Products alignment */
+.your-products
+{
+    display: inline-block;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    margin-left: 0px;
+    margin-top: 2em;
+}
+
+/* Menu list styling */
+.menu
+{
+    color: black;
+    text-transform: uppercase;
+    line-height: 4em;
+    -webkit-box-flex: 0;
+    display:flex;
+    justify-content:space-evenly;
+    margin: 0%;
+    margin-inline-start: -40px;    
+    list-style: none;
+    background-color: beige;
+}
+
+/* Menu stylings hover */
+.href-menu{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color:#D54756;
+    font-family: Special+Elite;
+    transition: 0.2s;
+}
+
+.href-menu:hover{
+    color: blue;
+}
+
+/* Headings alignment */
+.heading
+{
+    background-color:beige;  
+    display:flex;
+    margin: 0%;
+    padding-left: 22px;
+    padding-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkslateblue;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.heading:hover{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+   color:firebrick;
+}
+
+
+/* Filter styling */
+.filters
+{
+    margin-top: -3px;
+    padding-left: 22px;
+    background-color: #C5E5F0;
+    font-family: 'Staatliches';  
+    padding-bottom: 1em;
+    border: 2px solid darkslategray;
+    max-width:30em;    
+}
+
+/* Filter-list styling */
+.filter-list{
+    list-style: none;
+    -webkit-box-flex: 0;
+    display:flex;
+    justify-content:space-between;
+    border-radius: 0%;
+    border-style: solid;
+    border-color: #0073B1;
+    background-color: #0073B1;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0%;
+    padding: 2%;
+    width: 26em;
+     height: 4em;
+     text-align: justify;
+}
+
+/* Filter-type alignment */
+.filtertype{
+border:0.2px solid black;
+width: 7em;
+height: 1.5em;
+background-color:#D54756;
+margin-left: 0px;
+padding-left:30px;
+margin-bottom: 0%;
+color: white;
+text-transform: capitalize;
+cursor: pointer;
+
+}
+.filtertype:hover{
+    background-color: cadetblue;
+}
+
+.subheading{
+    background-color: beige;
+    display: flex;
+    margin-top: 0;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkslateblue;
+    padding-left: 20px;
+}
+/* Results page */
+.results
+{
+    background-color:beige;
+    padding-top:0;
+    padding-left: 20px;
+    margin-top: -1.2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkslateblue;
+}
+
+.products{
+    background-color: beige;
+}
+/* Product styling */
+.product{
+    margin:-10px;
+    padding:2%; 
+    background-color:beige;
+    max-width: 100%;
+        
+}
+
+.img-shoe{
+    border: 0.2px solid firebrick;
+}
+
+/* h3 heading styling */
+.h3-heading{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: darkolivegreen;
+
+}
+
+/* Product content styling */
+.para-product{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color:black;
+}
+
+/* Social media icon stylings */
+.material-icons{
+    color: black;
+}
+button{
+    background-color:darkolivegreen;
+    margin-bottom: 10px;
+}
+button:hover{
+    background-color: floralwhite;
+    cursor: pointer;
+}
+.color-radio{
+   color:black;
+   list-style-type: none;
+   font-size: 14px; 
+}
+
+.page-footer{
+    background-color:#729C75 ;
+    height: 250px;
+    margin-top: -1em;
+}
+
+/* Social icons alignments */
+.social{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left: -1.3em;
+    padding-top: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 15px;
+    justify-content: space-between;
+    margin-right: 1.3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* footer alignment */
+.footer-link{
+    text-decoration: none;
+    color: black;
+
+}
+.footer-link:hover{
+    color: beige;
+}
+h1{
+    margin-top:15px;
+    margin-left: 0px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: 'Special Elite';
+    padding-top: 40px;
+    color: black;
+    text-align: center;
+    border-bottom: 1px solid darkolivegreen;
+    padding-bottom: 20px;
+}
+
+/* Terms and conditions stylings and alignment */
+.legal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left:0px;
+    margin-right: 40px;
+    list-style-type: none;
+
+}
+.link-end{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight:normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.copyright{
+    text-align:center;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+
+/*PRODUCT PAGE STYLING*/
+.product1{
+    margin:2px;
+    padding:2%; 
+    background-color:beige;
+    max-width: 100%;
+    max-height: 100%;
+        
+}
+
+/* Relevant recommendation stylings */
+.relevant-recommend{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 40px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.relevant-images{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    max-width: 100%;
+    margin:0px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Image settings */
+.image-setting{
+    width:220px;
+    height: 150px;
+    border: 0.2px solid black;
+    margin-bottom: 20px;
+}
+.h3-heading1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: darkolivegreen;
+    margin-top: -1em;
+
+}
+.image-setting:hover{
+    border: 0.2px solid firebrick;
+    cursor: pointer;
+}
+
+/* Product settings */
+.product-setting{
+    width:230px;
+    height: 200px;
+    margin-bottom: 3px;
+    border: 1px solid black;
+}
+.layout-product{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Page number orientation */
+.pages{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding-left:0em;
+}
+.page{
+    text-decoration: none;
+    color:darkolivegreen;
+    font-weight: bold;
+    margin-left:5px;
+    margin-bottom:10px;
+}
+.img-shoe1{
+    border: 1px solid firebrick;
+}
+
+
+
+
+
+/*Media Query medium viewport*/
+
+@media only screen and (min-width:600px){
+
+.search-bar{
+
+    min-width: 400px;
+
+}
+.filters{
+    max-width:40em;
+}
+
+.results{
+    display: grid;
+    grid-template-columns: repeat(2
+    , 1fr);
+    grid-gap:2.6em;
+    justify-content: space-evenly;
+    margin-top: -0.5em;
+    padding-top: 0;
+}
+
+}
+
+/*Media Query largest viewport*/
+@media only screen and (min-width:820px){
+
+    /* Search Bar extension based on the largest view-port orientation */
+
+    .search-bar{
+    
+        min-width: 500px;
+        margin-left: 150px;
+        margin-right: 240px;
+    
+    }
+
+    /* Logo alignment */
+    .Icon
+{ 
+    margin-left: 20px;   
+   
+}
+
+.filter-options{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    justify-content: space-between;
+}
+.filter-list{
+    padding-left: 0;
+    width: 22em;
+}
+
+.product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+
+.layout-product{
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+
+/* Images alignment */
+.img-shoe1{
+    width: 40%;
+    margin-left:15em;
+    margin-top:-25.3em;
+    height: 401px;
+    border: 1px solid firebrick;
+}
+
+/* product description alignment */
+.description-detail{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    margin-left:48em;
+    margin-top:-25em;
+}
+
+.results{
+    display: grid;
+    grid-template-columns: repeat(3
+    , 1fr);
+    grid-gap:2.6em;
+    justify-content: space-evenly;
+    margin-top: -0.5em;
+    padding-top: 0;
+}
+
+.filters{
+    max-width:100%;
+}
+
+
+    }
+
+   
+   /* .filters{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }*/
