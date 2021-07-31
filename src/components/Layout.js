@@ -4,6 +4,7 @@ import Banner from '../components/Banner'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
 
+
 const Layout = ({children}) => {
     return (
         <div className="layout">
@@ -11,10 +12,11 @@ const Layout = ({children}) => {
             <Menu/>            
             <Banner />  
             
-            <main className="products">
-            <section className="result">
+            <main>
+           
             {children}
-            </section>
+           
+            
             </main>
 
             <Footer />
