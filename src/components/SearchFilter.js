@@ -4,13 +4,13 @@ import ProductList from './ProductList'
 const SearchFilter = ({result}) => {
 
     console.log('products', result);
-    const ProductArray = result.slice(0,20).map((product) => <ProductList key={product} data={product} />)
+    const ProductArray = result.slice(0,20).map((product) => <ProductList key={product.prod_name} data={product} />)
     
     
 
     return (
 
-        <div className="container">
+        <div className="results">
             {ProductArray}
 
             <p id="pageNumber">
