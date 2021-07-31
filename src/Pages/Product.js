@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import Layout from '../components/Layout'
-import Filter from '../components/Filter'
 import SearchFilter from '../components/SearchFilter'
 
-const Product = ({data}) => {
+const product = ({data}) => {
 
     const [searchState, setSearchState] = useState({
         query: ``,
@@ -23,12 +22,12 @@ const Product = ({data}) => {
         })
       }
 
-
-    const searchResult = data
-    .filter(({productPrice}) => productPrice >= minPrice)
+//console.log(minPrice + "minPrice")
+   const searchFilter = data
+   .filter(({productPrice}) => parseInt(productPrice.substring(1)) >= minPrice)
     .filter(({productName}) => productName.toUpperCase().includes(query.toUpperCase()))
-    .filter(({filtertype}) => methods.length === 0 || 
-    filtertype.filter((method) => methods.includes(method)).length > 0)
+    .filter(({filtertype}) => searchState.methods.length === 0 || 
+    filtertype.filter((method) => searchState.methods.includes(method)).length > 0)
     .sort(sort)
   
   const eventChange = (event) => {  
@@ -68,7 +67,7 @@ const Product = ({data}) => {
     }
   }
 
-  console.log('Search Results', searchResult);
+  
 
   return (
     <Layout>
@@ -156,7 +155,7 @@ const Product = ({data}) => {
     </fieldset>
   </form>
 
-  <SearchFilter result={searchResult}/>
+  <SearchFilter result={searchFilter}/>
 
 
 </Layout>
@@ -164,4 +163,4 @@ const Product = ({data}) => {
 )
 }
 
-export default Product
+export default product
