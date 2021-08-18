@@ -1,19 +1,9 @@
 import React, { useState } from 'react'
-var cache = window.localStorage;
 
 const ProductList = ({ data }) => {
 
 
-  // let cartCount = cache.getItem('cartCount');
-  // let wishlistCount = 0;
-
-  // const addToCartClicked = () => {
-  //   cartCount + 1;
-  //   cache.setItem('cartCount', cartCount);
-  //   console.log(cartCount);
-  // }
-
-  const { productName, productDescp, productPrice, productImage } = data
+   const { productName, productDescp, productPrice, productImage } = data
 
   const [img, setImg] = useState(``)
   import(`../img/${productImage}`).then((image) => setImg(image.default))
@@ -26,14 +16,36 @@ const ProductList = ({ data }) => {
         <h3 className="h3-heading">{productName}</h3>
         <data value="39" className="para-product"><del>$90.00</del> <ins>${productPrice}</ins></data>
         <p className="para-product">Here is a shot of this product that might entice a user to click and add it to their cart.</p>
-        {/* <div>
-          <input type='button' value="Add To Cart" onClick={addToCartClicked()} style={{ color: 'white', backgroundColor: '#D54756' }}></input>
-          <input type='button' value="Add to WishList" style={{ color: 'white', backgroundColor: '#D54756', marginLeft: '3px' }}></input>
-        </div> */}
+        
+        
         <dl>
           <dt className="filtertype">Rating</dt>
           <dd>4.4 <span className="material-icons">star</span><span className="material-icons">star</span><span className="material-icons">star</span><span className="material-icons">star</span><span className="material-icons">star_half</span></dd>
         </dl>
+
+        <form>
+          <fieldset>
+            <legend className="filtertype">Colours</legend>
+            <ul>
+              <li class="color-radio"><label><input type="radio" name="colour" value="r"/> Red</label></li>
+              <li class="color-radio"><label><input type="radio" name="colour" value="w" /> White</label></li>
+              <li class="color-radio"><label><input type="radio" name="colour" value="b" /> Blue</label></li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend class="filtertype">Sizes</legend>
+            <ol>
+              <li  class="color-radio"><label><input type="radio" name="size" value="m"/> 9</label></li>
+              <li  class="color-radio"><label><input type="radio" name="size" value="l"/> 9.5</label></li>
+              <li  class="color-radio"><label><input type="radio" name="size" value="xl"/> 10</label></li>
+            </ol>
+          </fieldset>
+        </form>
+        <footer>
+          <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+          <button type="button"><span class="material-icons">favorite</span></button>
+        </footer>
+        
       </header>
     </article>
 
