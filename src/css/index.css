@@ -342,23 +342,7 @@ h1{
     padding-bottom: 20px;
 }
 
-.overlay{
-    position: absolute;
-    bottom:-31.1em;
-   margin-left:0em;
-    transition: .5s ease;
-    opacity:0;
-    color:black;
-  text-transform: uppercase;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
-  color: #f1f1f1; 
-  padding:130px;
 
-}
-.product:hover .overlay{
-    opacity: 1;
-}
 /* Terms and conditions stylings and alignment */
 .legal{
     display: flex;
