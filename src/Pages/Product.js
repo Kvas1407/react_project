@@ -74,23 +74,7 @@ const product = ({data}) => {
 
 <form className="filters">
     <h2>Filters</h2>
- <div className="search-div">
-          <fieldset className="search">
-            <input type="search" name="search" id="filterResults" autoComplete="off" onChange={eventChange} value={query}/>
-          </fieldset>
-          <fieldset>
-          <select name="sort" id="sort" defaultValue="0" onChange={targetSwap}>
-            <option value="1">Price, highest to lowest</option>
-            <option value="0">Price, lowest to highest</option>
-            <option value="newest">Latest Arrivals</option>
-          </select>
-        </fieldset>
-        <fieldset className="slider">
-          <label htmlFor="filterPrice">Price:</label>
-          <input type="range" name="price" id="filterPrice" value={minPrice} min="0" max="100" step="0.1" onChange={priceSort}/>
-          <output htmlFor="filterPrice">{minPrice.toFixed(1)}</output>
-        </fieldset>
-        </div>
+ 
 
     <div className="filter-options">
 
@@ -145,6 +129,15 @@ const product = ({data}) => {
         </ol>
       </fieldset>
     </div>
+    <div className="search-div">
+         
+         
+        <fieldset className="slider">
+          <label htmlFor="filterPrice">Price:</label>
+          <input type="range" name="price" id="filterPrice" value={minPrice} min="0" max="100" step="0.1" onChange={priceSort}/>
+          <output htmlFor="filterPrice">{minPrice.toFixed(1)}</output>
+        </fieldset>
+        </div>
     <fieldset>
       <label htmlFor="sort" className="filtertype">Show</label>
       <select name="sort" id="sort">
@@ -154,6 +147,8 @@ const product = ({data}) => {
       </select>
     </fieldset>
   </form>
+
+  <h2 class="subheading">Showing Results: 6 Products</h2>
 
   <SearchFilter result={searchFilter}/>
 

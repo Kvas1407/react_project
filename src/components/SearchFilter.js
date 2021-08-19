@@ -31,11 +31,11 @@ const SearchFilter = ({ result }) => {
             <div style ={{alignContent:'center'}}>
                 <p id="numProducts" style={{ backgroundColor: `Beige` }}>
                     <button onClick={() => updatePage(currPage - 1)} disabled={(currPage === 1) ? `disabled` : ``}>
-                        <span className="material-icons">{'Previous Page <'}</span>
+                        <span className="pagination">{'< Previous Page'}</span>
                     </button>
                     Showing {(ProductArray.length === 1) ? `product` : `products`} {startRow + 1} to {Math.min(endRow, result.length)} of {result.length}
                     <button onClick={() => updatePage(currPage + 1)} disabled={(currPage === totalPages) ? `disabled` : ``} >
-                        <span className="material-icons">{'Next Page >'}</span>
+                        <span>{'Next Page >'}</span>
                     </button>
                 </p>
             </div>

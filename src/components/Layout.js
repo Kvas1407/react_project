@@ -11,12 +11,12 @@ const Layout = ({children}) => {
             <Header/>
             <Menu/>            
             <Banner />  
-            
+           
             <main>
            
             {children}
            
-            
+           
             </main>
 
             <Footer />
