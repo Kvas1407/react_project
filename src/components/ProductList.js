@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import singleProduct from '../context/singleProduct'
 
 const ProductList = ({ data }) => {
 
@@ -7,6 +8,8 @@ const ProductList = ({ data }) => {
 
   const [img, setImg] = useState(``)
   import(`../img/${productImage}`).then((image) => setImg(image.default))
+
+  
 
   return (
     
@@ -47,7 +50,7 @@ const ProductList = ({ data }) => {
         </form>
         <footer>
           <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-          <button type="button"><span class="material-icons">favorite</span></button>
+          <button type="button"><span class="material-icons" onClick={() => addingToCart(productName)}>favorite</span></button>
         </footer>
         
       </header>

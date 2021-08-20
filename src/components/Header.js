@@ -1,5 +1,8 @@
 import React from 'react';
 import webLogo from '../img/ShoeStreak_Logo.svg'
+import favIcon from '../img/Svg-Icons/Like- Heartin.svg'
+import cart from '../img/Svg-Icons/shopping-cart.svg'
+import menu from '../img/Svg-Icons/menu (1).svg'
 
 
 const Header = () => {
@@ -19,9 +22,9 @@ const Header = () => {
          
         <div className="your-products">
           
-          <a href="#"><img className="Icon" src="src/img/Svg-Icons/Like- Heartin.svg" alt="Favourite"/></a>
-          <a href="#"><img className="Icon" src="src/img/Svg-Icons/shopping-cart.svg" alt="Favourite"/></a>
-          <a href="#"><img className="Icon" src="src/img/Svg-Icons/menu (1).svg" alt="Open Menu" /></a>
+          <a href="#"><img className="Icon" src={favIcon} alt="Favourite"/></a>
+          <a href="#"><img className="Icon" src={cart} alt="Favourite"/></a>
+          <a href="#"><img className="Icon" src={menu} alt="Open Menu" /></a>
         </div>
       </header>
 	)

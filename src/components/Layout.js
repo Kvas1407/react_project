@@ -5,7 +5,10 @@ import Menu from '../components/Menu'
 import Footer from '../components/Footer'
 
 
+
 const Layout = ({children}) => {
+
+    
     return (
         <div className="layout">
             <Header/>
