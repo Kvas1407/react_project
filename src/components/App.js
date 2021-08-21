@@ -1,5 +1,8 @@
 import React from 'react'
 import Product from '../Pages/Product'
+import singProduct from '../context/singleProduct'
+import SingleProduct from '../Pages/SingleProduct'
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 
 const App = () => {
 	const products= [
@@ -147,9 +150,16 @@ const App = () => {
       }
     ]
 
-    return ( 
-        <Product data={products} />
-      )
+    return (
+      <Router>
+          <singProduct.Provider value= {'Hello'}>
+          <Switch>
+          <Route exact path="/"><Product data={products} /></Route>
+          <Route exact path="/product/:slug"><SingleProduct /></Route>
+          </Switch>
+          </singProduct.Provider>
+      </Router>
+  )
     }
 
     export default App

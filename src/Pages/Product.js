@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Layout from '../components/Layout'
 import SearchFilter from '../components/SearchFilter'
 
-const product = ({data}) => {
+const Product = ({data}) => {
 
     const [searchState, setSearchState] = useState({
         query: ``,
@@ -158,4 +158,4 @@ const product = ({data}) => {
 )
 }
 
-export default product
+export default Product
