@@ -41,13 +41,15 @@ html {
 }
 .banner{
     height:auto;
-    max-width: 100%;
-    right: 0;
-    margin-right: 0em;
+    max-width: auto;
+    right: -25rem;
+    padding-right: -25rem;
+  
 }
 .bannerImg{
-    width:100em;
-  object-fit: fill;
+    max-width: auto;
+    width:100rem;
+  object-fit:cover;
   margin-right: 0em;
   height:500px;
   
@@ -221,7 +223,7 @@ cursor: pointer;
 }
 
 .subheading{
-    background-color: beige;
+    background-color:beige;
     display: block;
     margin-top: 10px;
     padding-top: 10px;
@@ -241,9 +243,11 @@ cursor: pointer;
     color: darkslateblue;
 }
 
-.products{
-    background-color: beige;
+.product{
+    background-color: white;
 }
+
+
 /* Product styling */
 .product{
     padding:2%; 
