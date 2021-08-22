@@ -280,6 +280,7 @@ cursor: pointer;
 /* Social media icon stylings */
 .material-icons{
     color: black;
+    
 }
 
 input[type="radio"]:checked:after {
@@ -498,8 +499,13 @@ h1{
     .Icon
 { 
     margin-left: 20px;   
-   
-}
+    color: rgba(255,255,255,0.2);
+    
+     }
+
+     .Icon.fav{
+        color: red;
+     }
 
 .filter-options{
     display: flex;

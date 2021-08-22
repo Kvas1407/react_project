@@ -1,16 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import singleProduct from '../context/singleProduct'
 import {Link} from 'react-router-dom'
+
 
 const ProductList = ({ data }) => {
 
 
-   const { productName, productDescp, productPrice, productImage } = data
+   const { id, productName, productDescp, productPrice, productImage } = data
 
   const [img, setImg] = useState(``)
   import(`../img/${productImage}`).then((image) => setImg(image.default))
 
   
+    const user = useContext(singleProduct).data;
+    const { toggleFavourite, addToCart } = useContext(singleProduct);
+
+    const handleFavouriteClick = (id) => {
+        // Toggle the favourites
+        console.log("handleFavouriteClick");
+        console.log(id);
+        
+        // Toggle this as a favourite
+        toggleFavourite(id);
+    };
+
+    const handleAddToCartClick = (id) => {
+        // Toggle the favourites
+        console.log("handleAddToCartClick");
+        console.log(id);        
+
+        // Toggle this as a favourite
+        addToCart(id);
+        alert("Added to cart");
+    };
+
 
   return (
     
@@ -35,23 +58,24 @@ const ProductList = ({ data }) => {
           <fieldset>
             <legend className="filtertype">Colours</legend>
             <ul>
-              <li class="color-radio"><label><input type="radio" name="colour" value="r"/> Red</label></li>
-              <li class="color-radio"><label><input type="radio" name="colour" value="w" /> White</label></li>
-              <li class="color-radio"><label><input type="radio" name="colour" value="b" /> Blue</label></li>
+              <li className="color-radio"><label><input type="radio" name="colour" value="r"/> Red</label></li>
+              <li className="color-radio"><label><input type="radio" name="colour" value="w" /> White</label></li>
+              <li className="color-radio"><label><input type="radio" name="colour" value="b" /> Blue</label></li>
             </ul>
           </fieldset>
           <fieldset>
-            <legend class="filtertype">Sizes</legend>
+            <legend className="filtertype">Sizes</legend>
             <ol>
-              <li  class="color-radio"><label><input type="radio" name="size" value="m"/> 9</label></li>
-              <li  class="color-radio"><label><input type="radio" name="size" value="l"/> 9.5</label></li>
-              <li  class="color-radio"><label><input type="radio" name="size" value="xl"/> 10</label></li>
+              <li  className="color-radio"><label><input type="radio" name="size" value="m"/> 9</label></li>
+              <li  className="color-radio"><label><input type="radio" name="size" value="l"/> 9.5</label></li>
+              <li  className="color-radio"><label><input type="radio" name="size" value="xl"/> 10</label></li>
             </ol>
           </fieldset>
         </form>
         <footer>
-          <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-          <button type="button"><span class="material-icons" onClick={() => addingToCart(productName)}>favorite</span></button>
+          <button type="button"><span className="material-icons" onClick={() => handleAddToCartClick(`${id}`)}>add_shopping_cart</span> Add to Cart</button>
+          <button type="button"><span className="material-icons" onClick={() => handleFavouriteClick(`${id}`)}>favorite</span></button>
+          
         </footer>
         
       </header>
@@ -59,5 +83,7 @@ const ProductList = ({ data }) => {
 
   )
 }
+
+
 
 export default ProductList

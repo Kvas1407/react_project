@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
-import Product from '../Pages/Product'
-import singProduct from '../context/singleProduct'
-import SingleProduct from '../Pages/SingleProduct'
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import React, { useState, useContext } from "react";
+import { useParams } from "react-router-dom";
+import App from "../components/App";
+import ProductList from "../components/ProductList";
+import singleProduct from "../context/singleProduct";
 
-const App = () => {
-	const products= [
+const FavouriteProduct = () => {
+    const { slug } = useParams();
+
+    let products = [
         {
             id: 0,
         productName: 'Nike Air',
@@ -171,72 +173,26 @@ const App = () => {
       }
     ]
 
-    // fetch() my user data, ensure it's on every page
-    const [userData, setUserData] = useState({
-      id: 1234,
-      username: `KeerthivasanKumar`,
-      photo: `tim-berners-lee.jpg`,
-      favourites: [],
-      cart: [],
-  });
+    const user = useContext(singProduct).data;
+    const favArr = user.favourites;
 
-    const toggleFavourite = (id) => {
-      console.log("Enter toggle Fav");
-      if (userData.favourites.includes(id)) {
-          // Slice out a
-          // console.log("Remove toggle Fav");
-          setUserData({
-              ...userData,
-              favourites: userData.favourites.filter((fav) => fav !== id),
-          });
-      } else {
-          // Add it in
-          // console.log("Add toggle Fav");
-          setUserData({
-              ...userData,
-              favourites: [...userData.favourites, id],
-          });
-      }
+    let favItem;
+    const favDisplay = favArr.map((favProd) => {
+        favItem = products.find((prod) => prod.id.toString() === favProd);
+        // console.log("favItem", favItem);
+        return <Product key={favItem.id} product={favItem} />;
+    });
 
-      console.log("userData", userData);
-  };
+    return (
+        <Layout>
+            <section className="products">
+                <h2>Hurray! You are in the Favourites Page. See the Homepage to add more products into your favourite cart.</h2>
+                {favDisplay.length > 0
+                    ? favDisplay
+                    : "No favourites Selected!"}
+            </section>
+        </Layout>
+    );
+};
 
-
-  const addToCart = (id) => {
-      // console.log("Add to cart");
-      const index = userData.cart.findIndex((val) => val.id === id);
-
-      if (index === -1)
-          // product not found in the cart
-          userData.cart.push({ id: id, count: 1 });
-      else userData.cart[index].count++; // increase the "count" by +1
-
-      setUserData({
-          ...userData,
-          cart: [...userData.cart],
-      });
-  };
-
-  
-  
-      // const productView= document.querySelector(SingleProduct)
-
-      return (
-      <Router>
-          <singProduct.Provider value={{
-                    data: userData,
-                    toggleFavourite: toggleFavourite,
-                    addToCart: addToCart,
-                }}
-                >
-          <Switch>
-          <Route exact path="/"><Product data={products} /></Route>
-          <Route exact path="/product/:slug"><SingleProduct /></Route>
-          
-          </Switch>
-          </singProduct.Provider>
-      </Router>
-  )
-    }
-
-    export default App
+export default FavouriteProduct;
