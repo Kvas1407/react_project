@@ -3,6 +3,7 @@ import webLogo from '../img/ShoeStreak_Logo.svg'
 import favIcon from '../img/Svg-Icons/Like- Heartin.svg'
 import cart from '../img/Svg-Icons/shopping-cart.svg'
 import menu from '../img/Svg-Icons/menu (1).svg'
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -22,8 +23,8 @@ const Header = () => {
          
         <div className="your-products">
           
-          <a href="#"><img className="Icon" src={favIcon} alt="Favourite"/></a>
-          <a href="#"><img className="Icon" src={cart} alt="Favourite"/></a>
+        <Link to="/favouriteProd"><img className="Icon" src={favIcon} alt="Favourite"/></Link>
+          <Link to="/cartItem"><img className="Icon" src={cart} alt="Favourite"/></Link>
           <a href="#"><img className="Icon" src={menu} alt="Open Menu" /></a>
         </div>
       </header>

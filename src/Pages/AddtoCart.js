@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import App from "../components/App";
+import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
-import singleProduct from "../context/singleProduct";
+import singProduct from "../context/singProduct";
 
 const addCart = () => {
     const { slug } = useParams();
@@ -177,6 +177,7 @@ const addCart = () => {
         return `$ ${(cents / 100).toFixed(2)}`;
     };
 
+    console.log("singProduct",singProduct);
     const user = useContext(singProduct).data;
     const prodcutCart = user.cart;
 
@@ -201,22 +202,23 @@ const addCart = () => {
             </li>
         );
     });
+    console.log("prodcutCartDisplay", prodcutCartDisplay);
     return (
         <Layout>
-            <section className="cart-wrapper">
+            <section className="cartPage">
                 <h2 className="heading">You are in your Cart page</h2>
 
-                <div className="cart-products">
+                <div className="cartList">
                     {prodcutCartDisplay.length > 0 ? (
-                        <ul className="cart-row-wrapper"> {prodcutCartDisplay} </ul>
+                        <ul className="cartproducts"> {prodcutCartDisplay} </ul>
                     ) : (
-                        <p className="empyt-cart-message">
+                        <p className="noProduct">
                             Your Favourite page is empty
                         </p>
                     )}
                 </div>
                 {Boolean(prodcutCartDisplay.length) && (
-                    <div className="checkout-button-div">
+                    <div className="checkOut">
                         <button>Check out {moneyValue(subtotal)}</button>
                     </div>
                 )}

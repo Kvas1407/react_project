@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import singleProduct from '../context/singleProduct'
+import singleProduct from '../context/singProduct'
 import {Link} from 'react-router-dom'
 
 

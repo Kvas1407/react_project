@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import App from "../components/App";
 import ProductList from "../components/ProductList";
-import singleProduct from "../context/singleProduct";
+import singleProduct from "../context/singProduct";
 
 const FavouriteProduct = () => {
     const { slug } = useParams();

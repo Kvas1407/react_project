@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {useParams} from 'react-router-dom'
-import singProduct from '../context/singleProduct'
+import singProduct from '../context/singProduct'
 
 const SingleProduct = () => {
     console.log('hello')

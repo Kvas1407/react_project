@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Product from '../Pages/Product'
-import singProduct from '../context/singleProduct'
+import singProduct from '../context/singProduct'
 import SingleProduct from '../Pages/SingleProduct'
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import FavouriteProduct from "../Pages/favouriteProduct";
+import AddCart from "../Pages/AddtoCart";
+
 
 const App = () => {
 	const products= [
@@ -173,9 +176,8 @@ const App = () => {
 
     // fetch() my user data, ensure it's on every page
     const [userData, setUserData] = useState({
-      id: 1234,
+      id: 2269986506,
       username: `KeerthivasanKumar`,
-      photo: `tim-berners-lee.jpg`,
       favourites: [],
       cart: [],
   });
@@ -203,7 +205,7 @@ const App = () => {
 
 
   const addToCart = (id) => {
-      // console.log("Add to cart");
+      console.log("Add to cart");
       const index = userData.cart.findIndex((val) => val.id === id);
 
       if (index === -1)
@@ -217,6 +219,7 @@ const App = () => {
       });
   };
 
+  console.log("userData", userData);
   
   
       // const productView= document.querySelector(SingleProduct)
@@ -233,6 +236,12 @@ const App = () => {
           <Route exact path="/"><Product data={products} /></Route>
           <Route exact path="/product/:slug"><SingleProduct /></Route>
           
+                    <Route path="/favouriteProd">
+                        <FavouriteProduct />
+                    </Route>
+                    <Route path="/cartItem">
+                        <AddCart />
+                    </Route>
           </Switch>
           </singProduct.Provider>
       </Router>
